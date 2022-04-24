@@ -1,12 +1,41 @@
+import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
-function App() {
+// import Bar Chart Page Component
+import BarChart from './charts/BarChart';
+
+// Import Line Chart Page Component
+import LineChart from './charts/LineChart';
+import { Line } from 'react-chartjs-2';
+
+
+const App = () => {
   return (
-    <div className="App">
-      {/* Homepage */}
-      <h1>CSE 412 Project</h1>
-    </div>
+    <Router>
+      <div className="App">
+        {/* Homepage */}
+        <h1>CSE 412 Project</h1>
+        <div className="graphChange">
+          {/* This is where the buttons will be for switching graphs */}
+
+          <Link to="/barchart"> Bar Chart </Link>
+          <Link to="/linechart"> Line Chart </Link>
+
+          <Routes>
+            <Route path='/barchart' element={<BarChart />}/>
+
+            <Route path='/linechart' element={<LineChart />}/>
+
+
+          </Routes>
+
+
+
+        </div>
+      </div>
+    </Router>
   );
 }
 
