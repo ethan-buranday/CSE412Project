@@ -13,8 +13,6 @@ ChartJS.register(
 )
 
 const LineChart = () => {
-  return (
-
     /*
         There is something wrong with the 'var' object and it's not recognizing it
     */ 
@@ -57,9 +55,11 @@ const LineChart = () => {
             }
         }
     }
-
-
   return (
+
+
+
+  
     <div>
         <Line
             data={data}
@@ -71,7 +71,7 @@ const LineChart = () => {
 
 
 
-  )
+  
 }
 
 export default LineChart
