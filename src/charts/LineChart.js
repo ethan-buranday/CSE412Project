@@ -1,6 +1,8 @@
 import React from 'react'
 import { Chart as ChartJS, LineElement, PointElement, CategoryScale, LinearScale, Title, Tooltip, Legend } from 'chart.js'
 import { Line } from 'react-chartjs-2'
+import { ApolloClient, InMemoryCache, ApolloProvider, HttpLink, from } from '@apollo/client'
+import { onError } from '@apollo/client/link/error'
 
 ChartJS.register(
     CategoryScale,
